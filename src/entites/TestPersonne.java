@@ -5,10 +5,33 @@ import entites2.Personne;
 public class TestPersonne {
 
 	public static void main(String[] args) {
-		AdressePostale adrPr1 = new AdressePostale(433, "des maréchaux", 30000, "Nîmes");
-		Personne pr1 = new Personne("Nom1", "Prenom1", adrPr1);
+		Personne pe1 = new Personne("Santina", "Jonathan");
 		
-		System.out.println("Voici les informations de la personne 1 : " + pr1.prenom + " " + pr1.nom);
+		AdressePostale adr1 = new AdressePostale(433, "des tonneliers", 30000, "Nimes");
+		AdressePostale adr2 = new AdressePostale(433, "des tonneliers", 30000, "Montpellier");
+		
+		pe1.adressePostale = adr1;
+		
+		System.out.println(pe1.getAdressePostale().ville);
+		
+		pe1.identifiant();
+		
+		pe1.setNom("LEA");
+		
+		pe1.identifiant();
+		
+		pe1.setPrenom("Laurent");
+		
+		pe1.identifiant();
+		
+		pe1.setAdressePostale(adr2);
+		
+		System.out.println(pe1.getAdressePostale().ville);
+		
+		String nom = pe1.getNom();
+		System.out.println(nom);
 	}
+	
+
 
 }
