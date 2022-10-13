@@ -16,7 +16,7 @@ public class Theatre {
 
 	public void inscrire(int nbClient, double prixPlace) {
 		if (this.capaciteMax > this.nbClient + nbClient) {
-			this.capaciteMax += this.nbClient;
+			this.nbClient += nbClient;
 			this.recetteTotale = prixPlace * this.nbClient;
 
 			System.out.println("Nombre de client : " + this.nbClient + " La recette totale : " + this.recetteTotale);
