@@ -28,9 +28,20 @@ public class LectureFichier {
 			String departement = tab[0];
 			Ville v = new Ville(nomVille, departement, Region, pop);
 			listeVille.add(v);
-			System.out.println(listeVille.get(i-1));
+			System.out.println(listeVille.get(i - 1));
 		}
 
+		List<String> listeVille25k = new ArrayList<>();
+		listeVille25k.add("Nom commune; Code departement; Nom de la Region; Population totale");
+
+		for (int i = 0; i < listeVille.size(); i++) {
+			if (listeVille.get(i).getPopuTotale() >= 25000) {
+				listeVille25k.add(listeVille.get(i).getNom() + "; " + listeVille.get(i).getCodeDepartement() + "; " + listeVille.get(i).getNomRegion() + "; " +  listeVille.get(i).getPopuTotale());
+			}
+		}
+		
+		Path pathCible = Paths.get("D:\\DIGINAMIC\\monFichier25k.txt");
+		Files.write(pathCible, listeVille25k);
 		// lecture du fichier
 //		for (String read : lines) {
 //			System.out.println(read);
