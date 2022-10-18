@@ -8,8 +8,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.Popup;
-import javax.swing.plaf.synth.Region;
 
 public class LectureFichier {
 
