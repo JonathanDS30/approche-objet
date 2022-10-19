@@ -14,6 +14,19 @@ public class Ville {
 		return nomVille;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		// Si le test du if est passé alors obj est une ville 
+		if (!(obj instanceof Ville)) {
+			return false;
+		}
+		// Conversion obj en ville
+		Ville autre =(Ville)obj; 
+		
+		// on compare le nom et le nombre d'habitant pour vérifier qu'ils sont égales 
+		return autre.nomVille.equals(this.nomVille) ;
+	}
+
 	public void setNomVille(String nomVille) {
 		this.nomVille = nomVille;
 	}
@@ -28,7 +41,7 @@ public class Ville {
 
 	@Override
 	public String toString() {
-		return  nomVille + " " + nbHabitant;
+		return nomVille + " " + nbHabitant;
 	}
 
 }
