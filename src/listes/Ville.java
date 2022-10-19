@@ -20,11 +20,14 @@ public class Ville {
 		if (!(obj instanceof Ville)) {
 			return false;
 		}
-		// Conversion obj en ville
+		// Conversion obj en ville Solution CAST
 		Ville autre =(Ville)obj; 
 		
 		// on compare le nom et le nombre d'habitant pour vérifier qu'ils sont égales 
-		return autre.nomVille.equals(this.nomVille) ;
+		if (autre.getNomVille().equals(this.getNomVille()) && autre.getNbHabitant()==this.getNbHabitant()) {
+			return true;
+		}
+		return false;
 	}
 
 	public void setNomVille(String nomVille) {
